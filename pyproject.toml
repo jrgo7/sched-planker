@@ -1,0 +1,19 @@
+[project]
+name = "stalk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "coloredlogs>=15.0.1",
+    "ffmpeg>=1.4",
+    "gtts>=2.5.4",
+    "playaudio>=1.0.5",
+    "selenium>=4.39.0",
+    "selenium-driverless>=1.9.4",
+    "selenium-stealth>=1.0.6",
+    "seleniumbase>=4.45.1",
+    "setuptools>=80.9.0",
+    "undetected-chromedriver>=3.5.5",
+]
