@@ -5,6 +5,7 @@ from typing import Any
 
 import coloredlogs
 import playaudio
+from desktop_notifier import DesktopNotifierSync
 from gtts import gTTS
 from selenium_driverless.types.by import By
 from seleniumbase import SB, BaseCase
@@ -158,6 +159,10 @@ def alert_available_slots(
         assert isinstance(listing["cap"], str)
         if int(listing["enrolled"]) < int(listing["cap"]):
             text = f"Available slots for {listing['course_code']} section {listing['section']}!"
+            notifier = DesktopNotifierSync()
+            notifier.send(
+                title=f"Slots available {listing['course_code']}", message=text
+            )
             gTTS(
                 text=text,
                 lang="en",
